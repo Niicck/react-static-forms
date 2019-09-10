@@ -16,7 +16,7 @@ const FormContainer = (props) => {
         {pages.map((page, i)=>(
           <li key={i}>
             <Link
-              to={`/forms/${page.heading}`}
+              to={`/forms/${data.name}/${page.heading}`}
             >
               {page.heading}
             </Link>
@@ -27,7 +27,7 @@ const FormContainer = (props) => {
         {pages.map((page, i)=>{
           <FormPage
             key={i}
-            path={`/forms/${page.heading}`}
+            path={`/forms/${data.name}/${page.heading}`}
             fields={page.fields}
           />
         })}
