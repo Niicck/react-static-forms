@@ -24,7 +24,7 @@ const FormContainer = (props) => {
         ))}
       </ul>
       <Switch>
-        {pages.map((page, i)=>{
+        {pages.map((page, i)=>(
           <Route
             key={i}
             path={`/forms/${data.name}/${page.heading}`}
@@ -32,7 +32,7 @@ const FormContainer = (props) => {
               <FormPage fields={page.fields} />
             )}
           />
-        })}
+        ))}
       </Switch>
     </div>
   );
