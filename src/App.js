@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { Root, Routes, addPrefetchExcludes } from 'react-static';
-import { Router, Link } from '@reach/router'
+import { Switch, Route } from 'react-router-dom'
 
 import FormPage from 'components/Form/FormPage';
 import Loading from './components/Pages/Loading';
@@ -11,9 +11,9 @@ const App = () => (
   <Root>
     <div> yon header </div>
     <Suspense fallback={<Loading/>}>
-      <Router>
-        <Routes default />
-      </Router>
+      <Switch>
+        <Route render={() => <Routes />} />
+      </Switch>
     </Suspense>
     <div> yon footer </div>
   </Root>

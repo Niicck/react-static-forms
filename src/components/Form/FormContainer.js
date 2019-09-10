@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouteData } from 'react-static';
-import { Router, Link } from '@reach/router'
+import { Switch, Route, Link } from 'react-router-dom';
 
 import FormPage from 'components/Form/FormPage';
 import { getPages } from 'helpers/data';
@@ -16,22 +16,24 @@ const FormContainer = (props) => {
         {pages.map((page, i)=>(
           <li key={i}>
             <Link
-              to={`/forms/${page.heading}`}
+              to={`/forms/${data.name}/${page.heading}`}
             >
               {page.heading}
             </Link>
           </li>
         ))}
       </ul>
-      <Router>
+      <Switch>
         {pages.map((page, i)=>{
-          <FormPage
+          <Route
             key={i}
-            path={`/forms/${page.heading}`}
-            fields={page.fields}
+            path={`/forms/${data.name}/${page.heading}`}
+            render={()=>(
+              <FormPage fields={page.fields} />
+            )}
           />
         })}
-      </Router>
+      </Switch>
     </div>
   );
 };
