@@ -24,13 +24,13 @@ const FormContainer = (props) => {
         ))}
       </ul>
       <Router>
-        {pages.map((page, i)=>{
+        {pages.map((page, i)=>(
           <FormPage
             key={i}
             path={`/forms/${data.name}/${page.heading}`}
             fields={page.fields}
           />
-        })}
+        ))}
       </Router>
     </div>
   );
