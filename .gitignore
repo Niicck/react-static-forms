@@ -1,0 +1,22 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+vars/local.sh
+
+# testing
+/local
+/coverage
+
+# react-static
+/artifacts
+/tmp
+
+# production
+/build
+
+# misc
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
