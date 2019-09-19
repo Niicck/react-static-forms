@@ -3,6 +3,7 @@ import { useRouteData } from 'react-static';
 
 const FormPage = (props) => {
   const { fields } = props;
+  console.log("On the form page")
   console.log("my Fields:", fields)
 
   return (
@@ -10,7 +11,7 @@ const FormPage = (props) => {
       <h1>Hi here is a form page.</h1>
       <h2>It has these fields:</h2>
       <ul>
-        {fields.map((field, i)=>(
+        {fields.length && fields.map((field, i)=>(
           <li key={i}>
             {field.section_heading && `Heading: ${field.section_heading}`}
             {field.label && `Label: ${field.label}`}
